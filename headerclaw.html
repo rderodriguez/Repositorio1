@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menú responivo</title>
+	<style>
+		#togglemenu{
+			font-family:arial;
+			background-color:grey;
+			color:white;
+			font-size:1.2em;
+			padding-left:1em;
+			line-height:2;
+			display:block;
+			cursor:pointer;
+		}
+		*{
+			margin:0;
+		}
+		.menu{
+			background-color: steelblue;
+			margin-top:0;
+			margin-bottom:0;
+			list-style:none;
+			padding-left:0;
+			font-family:arial;
+			display:none;
+		}
+
+		@media screen and (min-width:768px){
+			.menu{
+				display:flex;
+			}
+			.menu li{
+				flex:auto;
+				text-align:center;
+				border-right:1px solid #fff;
+			}
+			.menu a{
+				padding-left:0;
+			}
+			#togglemenu{
+				display:none;
+			}
+		}
+
+		.menu li{
+			flex:auto;
+			border-bottom:1px solid #fff;
+		}
+		.menu a{
+			text-decoration:none;
+			color:white;
+			line-height:2;
+			display:block;
+			padding-left:1em;
+		}
+		.menu a:hover{
+			background-color:rgba(0,0,0,0.3);
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<div id="togglemenu">Menú</div>
+			<ul class="menu">
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="#">Clientes</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("#togglemenu").click(function(){
+			$(this).next().slideToggle();
+		});
+	</script>
+</body>
+</html>
